@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.loginUser {
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../../assets/images/fondo.webp);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.formLogin {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 65px 55px 55px 55px;
+}
+
+.form-log {
+
+  width: 400px;
+  margin: 0 auto;
+  border: solid 1px #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.login {
+  display: block;
+  font-size: 39px;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 50px;
+  font-weight: bold;
+}
+
+.sectionName {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid #d9d9d9;
+  margin-bottom: 25px;
+}
+
+.sectionPassword {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.tittle {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  padding-left: 7px;
+}
+
+input[type="text"],
+input[type="password"] {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 55px;
+  background: 0 0;
+  padding: 0 7px 0 7px;
+  outline: none;
+  border: none;
+  overflow: visible;
+}
+
+.section-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button-log {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.login-class {
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(
+    right,
+    #00dbde,
+    #fc00ff,
+    #00dbde,
+    #fc00ff
+  );
+  background: -o-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  top: 0;
+  left: -100%;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn-login {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+}
+
+button {
+  outline: none !important;
+  border: none;
+  background: 0 0;
+}

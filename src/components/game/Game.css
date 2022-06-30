@@ -1,0 +1,88 @@
+.game-bingo-page {
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(to right, rgb(67, 198, 172), rgb(25, 22, 84)) repeat scroll
+    0% 0%;
+}
+
+#bingo-table-game {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  background: white;
+  width: 100%;
+}
+
+th,
+td {
+  font-family: Helvetica;
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid black;
+  width: 20%;
+  font-size: 18px;
+}
+
+.bingoHeader {
+  background: #a31836;
+  color: white;
+}
+
+
+.button-bingo-winner {
+  display: block;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: transform 200ms ease-in;
+  background: linear-gradient(top, #fff, #ddd);
+  background-color: #fff;
+  box-shadow: 0 2px 7px #555;
+  text-shadow: 0 -1px 1px #111;
+  text-align: center;
+  color: #990000;
+  font-size: 25px;
+  line-height: 120px;
+  width: 100%;
+  border-radius: 80px;
+}
+
+.button-bingo-winner:hover {
+  background-color: #eee;
+  color: green;
+  transform: (rotate(-10deg) scale(0.9));
+}
+
+.show-ball {
+  background-color: #990000;
+  color: white;
+  font-size: 40px;
+  padding: 40px 0;
+  width: 65%;
+  text-align: center;
+  border-radius: 100%;
+  font-weight: 600;
+  font-family: cursive;
+}
+
+.show-ball-bingo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-bingo-finish {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.note-players {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+
+#rectangleFree,
+.bgSelected {
+  background-color: #5ff968;
+}
