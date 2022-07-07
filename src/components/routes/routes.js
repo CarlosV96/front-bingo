@@ -9,6 +9,10 @@ import Deleted from "../deleted/Deleted";
 import Winner from "../winner/Winner";
 import Loser from "../loser/Loser";
 
+/**
+ * Rutas de componentes.
+ * @returns 
+ */
 export default function RoutesApp() {
   return (
     <Provider>

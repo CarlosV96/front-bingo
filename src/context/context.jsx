@@ -3,25 +3,27 @@ import React, { createContext, useState } from "react";
 export const Context = createContext();
 
 export const Provider = ({ children }) => {
-  //const [contact, setContact] = useState({});
-  const [startGame, setStartGame] = useState(false);
   const [respuestaErr, setRespuestaErr] = useState("");
+  const [player, setPlayer] = useState("");
+  const [fecha, setFecha] = useState("");
+  const [thereIsPlayer, setThereIsPlayer] = useState("");
 
-    return (
-        <Context.Provider
-          value={{
- //           contact,
-   //         setContact,
-            startGame,
-            setStartGame,
-            respuestaErr,
-            setRespuestaErr
-          }}
-        >
-          {children}
-        </Context.Provider>
-      );
+  return (
+    <Context.Provider
+      value={{
+        thereIsPlayer,
+        setThereIsPlayer,
+        fecha,
+        setFecha,
+        player,
+        setPlayer,
+        respuestaErr,
+        setRespuestaErr,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };
 
 export default Provider;
-

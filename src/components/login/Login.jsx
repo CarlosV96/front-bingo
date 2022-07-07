@@ -2,10 +2,21 @@ import "../login/Login.css";
 import React, { useState, useContext } from "react";
 import { Context } from "../../context/context";
 import { Link, useNavigate } from "react-router-dom";
-import { loginUser, insertPlayersLobby, insertPlayersGame } from "../../api/services";
+import {
+  loginUser,
+  insertPlayersLobby,
+  insertPlayersGame,
+  getUsersLobby,
+} from "../../api/services";
+import Footer from "../footer/Footer";
 
+/**
+ * Componente de inicio donde cada jugador se registrará
+ * o se logueará.
+ * @returns
+ */
 const Login = () => {
-  const { respuestaErr, setRespuestaErr } = useContext(Context);
+  const { respuestaErr, setRespuestaErr, setFecha } = useContext(Context);
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -19,17 +30,25 @@ const Login = () => {
     jugadorLobby: name,
   };
 
-  
   const insertPlayerGame = {
     jugadorGame: name,
   };
 
-
   const login = async () => {
+    await getUsersLobby()
+      .then((response) => {
+        if (response.data.data.length === 0) {
+          setFecha(new Date().getTime());
+        } else {
+          setFecha(response.data.data[0].createdAt);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     await loginUser(body)
       .then((response) => {
         setRespuestaErr(response);
-        console.log("SetRespuestaErr", respuestaErr);
         if (response.status === 200) {
           insertPlayersLobby(insertPlayerLobby);
           insertPlayersGame(insertPlayerGame);
@@ -52,13 +71,12 @@ const Login = () => {
 
   return (
     <div className="loginUser">
-      <div className="container">
+      <div className="container-login">
         <div className="formLogin">
           <form className="form-log">
             <h2 className="login"> LOGIN </h2>
             <div className="sectionName">
               <span className="tittle">Username</span>
-
               <input
                 type="text"
                 id="username"
@@ -67,10 +85,8 @@ const Login = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-
             <div className="sectionPassword">
               <span className="tittle">Password</span>
-
               <input
                 type="password"
                 id="password"
@@ -95,6 +111,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -13,7 +13,7 @@ body {
   background-image: url(../../assets/images/fondo.webp);
 }
 
-.container {
+.container-login {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;

@@ -2,17 +2,17 @@ import axios from "axios";
 const url_auth = "http://localhost:4200/authenticate";
 const url_register = "http://localhost:4200/register";
 
-// const url_get = "http://localhost:4200/get";
-
 const url_postLobby = "http://localhost:8080/api/v1/player";
 const url_getUsersLobby = "http://localhost:8080/api/v1/index";
 const url_deleteLobby = "http://localhost:8080/api/v1/index/delete"
 
 const url_postGame = "http://localhost:8080/api/v1/game";
 const url_getUsersGame = "http://localhost:8080/api/v1/index/game";
+const url_deleteGame = "http://localhost:8080/api/v1/game/delete"
 
 const url_winner = "http://localhost:8080/api/v1/winner";
 const url_getWinner = "http://localhost:8080/api/v1/index/winner";
+const url_deleteWinner = "http://localhost:8080/api/v1/winner/delete"
 
 
 
@@ -125,25 +125,6 @@ export const registerUser = async (body) => {
 ---------------------------------------------------
 */
 
-/*
- * Obtiene todos los jugadores ya logueados.
- * @returns 
- *
-export const getUsers = async () => {
-  try {
-    const response = await axios.get(url_get, {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
-    return response;
-  } catch (error) {
-    return error;
-  }
-};
-*/
-
 /**
  * Inserta los jugadores logueados en la tabla game
  * @param {} body 
@@ -170,6 +151,23 @@ export const getUsers = async () => {
 export const getUsersGame = async () => {
   try {
     const response = await axios.get(url_getUsersGame, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+/**
+ * Elimina todos los jugadores del game
+ */
+ export const deleteUsersGame = async () => {
+  try {
+    const response = await axios.delete(url_deleteGame, {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
@@ -211,6 +209,23 @@ export const getUsersGame = async () => {
  export const getWinner = async () => {
   try {
     const response = await axios.get(url_getWinner, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+/**
+ * Elimina el jugador ganador para reiniciar el juego en 0
+ */
+ export const deleteWinner = async () => {
+  try {
+    const response = await axios.delete(url_deleteWinner, {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",

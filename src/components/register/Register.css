@@ -13,7 +13,7 @@
     background-image: url(../../assets/images/fondo.webp);
   }
   
-  .container {
+  .container-register {
     width: 100%;
     min-height: 100vh;
     display: -webkit-box;

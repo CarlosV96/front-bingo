@@ -1,31 +1,34 @@
-//import React, { useEffect, useState } from "react";
 import "./LobbyBingo.css";
 import bingo from "./../../assets/images/bingo.png";
 import CounterTime from "../counter-time/CounterTime";
 import { getUsersLobby } from "../../api/services";
-import React, { useEffect, useState, useContext } from "react";
-//import { Context } from "../../context/context";
+import React, { useEffect, useState } from "react";
+import Footer from "../footer/Footer";
 
+/**
+ * Componente Lobby, donde todos los jugadores registrados aparecerán
+ * y esperarán el terminar un contador para empezar el juego.
+ * @returns
+ */
 const LobbyBingo = () => {
-  //const { respuestaErr } = useContext(Context);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    callGetUsers();
-  }, []);
-
-  //console.log(respuestaErr);
+    setTimeout(() => {
+      callGetUsers();
+    }, 1000);
+  }, [users]);
 
   const callGetUsers = async () => {
     await getUsersLobby()
       .then((response) => {
-        console.log("DATA JUGADORES--",response.data.data);
         setUsers(response.data.data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   return (
     <div className="lobby-bingo">
       <div className="container">
@@ -44,6 +47,7 @@ const LobbyBingo = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

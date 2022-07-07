@@ -3,12 +3,16 @@ import { Context } from "../../context/context";
 import "../error/Error.css";
 import error from "../../assets/images/error.webp";
 import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 
+/**
+ * Componente que presentará el error sucedido
+ * al momento de loguearse.
+ * @returns
+ */
 const Error = () => {
   const { respuestaErr } = useContext(Context);
   const errorText = respuestaErr.response.data;
-
-  //console.log("ERRORRRRR", respuestaErr.response.data);
 
   return (
     <div className="error-page">
@@ -25,6 +29,7 @@ const Error = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

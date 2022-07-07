@@ -1,5 +1,23 @@
 p.text {
-    text-align: center;
-    font-size: 70px;
+  text-align: center;
+  font-size: 70px;
 }
- 
+
+button {
+  outline: none !important;
+  border: none;
+  background: 0 0;
+}
+
+.btn-volver {
+  display: flex;
+  align-content: flex-end;
+  justify-content: center;
+  color: white;
+  font-size: 3em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+a {
+  text-decoration: none;
+}

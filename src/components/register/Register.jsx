@@ -1,9 +1,14 @@
 import React from "react";
-import "../register/Register.css"
+import "../register/Register.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../api/services";
+import Footer from "../footer/Footer";
 
+/**
+ * Componente al cual serán llevados los que deseen registrarse.
+ * @returns
+ */
 const Register = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -17,9 +22,6 @@ const Register = () => {
   const register = async () => {
     await registerUser(body)
       .then((response) => {
-        //Cuando se registra exitosamente como le puedo informar al usuario que se
-        //registro de manera exitosa, aquí solamente me reenvía al login, pero no me muetra
-        //que fue exitosa.
         if (response.status === 200) {
           navigate({
             pathname: "/",
@@ -37,13 +39,12 @@ const Register = () => {
 
   return (
     <div className="registerUser">
-      <div className="container">
+      <div className="container-register">
         <div className="formLogin">
           <form className="form-log">
             <h2 className="login"> SIGN UP </h2>
             <div className="sectionName">
               <span className="tittle">Username</span>
-
               <input
                 type="text"
                 id="username"
@@ -54,7 +55,6 @@ const Register = () => {
             </div>
             <div className="sectionPassword">
               <div className="tittle">Password</div>
-
               <input
                 type="password"
                 id="password"
@@ -84,6 +84,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

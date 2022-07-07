@@ -27,7 +27,6 @@ td {
   color: white;
 }
 
-
 .button-bingo-winner {
   display: block;
   cursor: pointer;
@@ -51,12 +50,18 @@ td {
   transform: (rotate(-10deg) scale(0.9));
 }
 
+.button-bingo-winner:disabled {
+  background-color: #909090;
+  color: rgb(255, 255, 255);
+  cursor: default;
+}
+
 .show-ball {
-  background-color: #990000;
+  background: linear-gradient(135deg, #c53051 0%, #950e2d 100%);
   color: white;
   font-size: 40px;
   padding: 40px 0;
-  width: 65%;
+  width: 70%;
   text-align: center;
   border-radius: 100%;
   font-weight: 600;
@@ -85,4 +90,21 @@ td {
 #rectangleFree,
 .bgSelected {
   background-color: #5ff968;
+}
+
+.title-balls-out {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.ball-out {
+  display: block;
+  float: left;
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 18px;
+  margin-right: 3px;
 }
