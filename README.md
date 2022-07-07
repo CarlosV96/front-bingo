@@ -22,7 +22,7 @@ Se entrega la parte del front para el juego de bingo virtual, finalizado.
 
 
 Parte de back en NodeJs (Usuario y contraseña) :
-- https://github.com/CarlosV96/back-bingo-java
+- https://github.com/CarlosV96/back-bingo-Nodejs-MongoDB
 
 Parte de back con Java :
 - https://github.com/CarlosV96/back-bingo-java
