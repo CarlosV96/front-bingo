@@ -21,4 +21,8 @@ Se entrega la parte del front para el juego de bingo virtual, finalizado.
 ![image](https://user-images.githubusercontent.com/97989722/177813359-83056afd-117a-487d-8689-3e29e3b1f112.png)
 
 
+Parte de back en NodeJs (Usuario y contraseña) :
+- https://github.com/CarlosV96/back-bingo-java
 
+Parte de back con Java :
+- https://github.com/CarlosV96/back-bingo-java
